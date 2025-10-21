@@ -4,17 +4,17 @@ local util = require("util")
 --- @param ctx table Empty table used as context, for future extension
 --- @return table Descriptions of available versions and accompanying tool descriptions
 function PLUGIN:Available(ctx)
-    util:DoSomeThing()
-    return {
-        {
-            version = "xxxx",
-            note = "LTS",
-            addition = {
-                {
-                    name = "npm",
-                    version = "8.8.8",
-                }
-            }
-        }
-    }
+    -- Fetch releases from GitHub API
+    local releases, err = util.fetch_github_releases()
+    
+    if err ~= nil then
+        -- Return empty array on error, vfox will handle the message
+        print("Error fetching TursoDB releases: " .. err)
+        return {}
+    end
+    
+    -- Parse and format releases
+    local versions = util.parse_releases(releases)
+    
+    return versions
 end
