@@ -1,5 +1,7 @@
 # vfox-plugin-tursodb
 
+[![Test mise Integration](https://github.com/dealenx/vfox-plugin-tursodb/actions/workflows/test-mise.yaml/badge.svg)](https://github.com/dealenx/vfox-plugin-tursodb/actions/workflows/test-mise.yaml)
+
 A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tursodatabase/turso) CLI versions.
 
 > TursoDB is an in-process SQL database written in Rust, compatible with SQLite.
