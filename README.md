@@ -8,9 +8,32 @@ A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tur
 
 ## Prerequisites
 
-- [vfox](https://vfox.dev/) version 0.3.0 or higher
+- [vfox](https://vfox.dev/) version 0.3.0 or higher, or
+- [mise](https://mise.jdx.dev/) (supports vfox plugins)
 
 ## Installation
+
+### Using mise
+
+Install the plugin:
+
+```bash
+mise plugin install tursodb https://github.com/dealenx/vfox-plugin-tursodb
+```
+
+Set global version:
+
+```bash
+mise use -g tursodb
+```
+
+Or install and use a specific version:
+
+```bash
+mise use -g tursodb@0.2.2
+```
+
+### Using vfox
 
 Install the plugin:
 
@@ -26,25 +49,37 @@ vfox add --source https://github.com/dealenx/vfox-plugin-tursodb.git tursodb
 
 ## Usage
 
-### Search available versions
+### With mise
 
 ```bash
-vfox search tursodb
+# List available versions
+mise ls-remote tursodb
+
+# Install latest version
+mise install tursodb@latest
+
+# Install specific version
+mise install tursodb@0.2.2
+
+# Use globally
+mise use -g tursodb@0.2.2
+
+# Use in current project
+mise use tursodb@0.2.2
 ```
 
-### Install a specific version
+### With vfox
 
 ```bash
+# Search available versions
+vfox search tursodb
+
 # Install latest version
 vfox install tursodb@latest
 
 # Install specific version
 vfox install tursodb@0.2.2
-```
 
-### Use a version
-
-```bash
 # Use in current shell session
 vfox use tursodb@0.2.2
 
@@ -60,6 +95,64 @@ vfox use -p tursodb@0.2.2
 ```bash
 turso --version
 ```
+
+## Quick Start with TursoDB
+
+After installing TursoDB CLI with vfox, you can start using the interactive shell:
+
+### 1. Launch the interactive shell
+
+```bash
+tursodb
+```
+
+This will start the Turso interactive shell:
+
+```
+Turso
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database
+turso>
+```
+
+### 2. Execute SQL statements
+
+#### Create a table
+
+```sql
+CREATE TABLE users (id INT, username TEXT);
+```
+
+#### Insert data
+
+```sql
+INSERT INTO users VALUES (1, 'alice');
+INSERT INTO users VALUES (2, 'bob');
+```
+
+#### Query data
+
+```sql
+SELECT * FROM users;
+```
+
+This will return:
+
+```
+1|alice
+2|bob
+```
+
+### 3. Working with persistent databases
+
+To work with a persistent database file:
+
+```bash
+tursodb my_database.db
+```
+
+For more information, see the [TursoDB Documentation](https://docs.turso.tech/tursodb/quickstart).
 
 ## Platform Support
 
@@ -103,5 +196,6 @@ Apache 2.0
 ## Links
 
 - [TursoDB Official Repository](https://github.com/tursodatabase/turso)
+- [TursoDB Documentation](https://docs.turso.tech/tursodb/quickstart)
 - [vfox Documentation](https://vfox.dev/)
 - [Plugin Development Guide](https://vfox.dev/plugins/create/howto.html)
