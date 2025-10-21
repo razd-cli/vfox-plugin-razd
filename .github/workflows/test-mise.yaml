@@ -49,4 +49,4 @@ jobs:
       - name: Verify turso command
         run: |
           eval "$(mise activate bash)"
-          turso --version
+          tursodb --version
