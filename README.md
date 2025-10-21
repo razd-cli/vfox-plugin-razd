@@ -1,4 +1,4 @@
-# vfox-plugin-turbodb
+# vfox-plugin-tursodb
 
 A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tursodatabase/turso) CLI versions.
 
@@ -15,13 +15,13 @@ A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tur
 Install the plugin:
 
 ```bash
-vfox add turbodb
+vfox add tursodb
 ```
 
 Or install from source:
 
 ```bash
-vfox add --source https://github.com/dealenx/vfox-plugin-turbodb.git turbodb
+vfox add --source https://github.com/dealenx/vfox-plugin-tursodb.git tursodb
 ```
 
 ## Usage
@@ -29,30 +29,30 @@ vfox add --source https://github.com/dealenx/vfox-plugin-turbodb.git turbodb
 ### Search available versions
 
 ```bash
-vfox search turbodb
+vfox search tursodb
 ```
 
 ### Install a specific version
 
 ```bash
 # Install latest version
-vfox install turbodb@latest
+vfox install tursodb@latest
 
 # Install specific version
-vfox install turbodb@0.2.2
+vfox install tursodb@0.2.2
 ```
 
 ### Use a version
 
 ```bash
 # Use in current shell session
-vfox use turbodb@0.2.2
+vfox use tursodb@0.2.2
 
 # Set global version
-vfox use -g turbodb@0.2.2
+vfox use -g tursodb@0.2.2
 
 # Set project-specific version
-vfox use -p turbodb@0.2.2
+vfox use -p tursodb@0.2.2
 ```
 
 ### Verify installation
@@ -75,7 +75,7 @@ turso --version
 
 ### Command not found after installation
 
-Make sure you've run `vfox use turbodb@<version>` to activate the version. Check that vfox is properly configured in your shell:
+Make sure you've run `vfox use tursodb@<version>` to activate the version. Check that vfox is properly configured in your shell:
 
 ```bash
 # For bash/zsh

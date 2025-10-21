@@ -3,7 +3,7 @@ PLUGIN = {}
 
 --- !!! MUST BE SET !!!
 --- Plugin name
-PLUGIN.name = "turbodb"
+PLUGIN.name = "tursodb"
 --- Plugin version
 PLUGIN.version = "0.1.0"
 --- Plugin homepage
@@ -33,7 +33,7 @@ NOTE:
     you can set this address to the manifest file address, so that the plugin can be updated automatically.
 
  --]]
-PLUGIN.manifestUrl = "https://github.com/dealenx/vfox-plugin-turbodb/releases/download/manifest/manifest.json"
+PLUGIN.manifestUrl = "https://github.com/dealenx/vfox-plugin-tursodb/releases/download/manifest/manifest.json"
 -- Some things that need user to be attention!
 PLUGIN.notes = {
     "TursoDB is currently in BETA. Use caution with production data.",

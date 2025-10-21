@@ -7,7 +7,7 @@ The plugin metadata SHALL define accurate identification information for the Tur
 
 #### Scenario: User queries plugin information
 - **WHEN** a user executes `vfox list` or inspects plugin metadata
-- **THEN** the plugin displays name "turbodb", version "0.1.0", and description "vfox plugin for TursoDB CLI"
+- **THEN** the plugin displays name "tursodb", version "0.1.0", and description "vfox plugin for TursoDB CLI"
 
 ### Requirement: Plugin Compatibility Declaration
 The plugin metadata SHALL declare minimum vfox runtime version requirements.

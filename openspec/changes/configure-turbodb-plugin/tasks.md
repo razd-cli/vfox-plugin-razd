@@ -1,7 +1,7 @@
 # Implementation Tasks
 
 ## 1. Update Plugin Metadata
-- [x] 1.1 Update PLUGIN.name to "turbodb"
+- [x] 1.1 Update PLUGIN.name to "tursodb"
 - [x] 1.2 Update PLUGIN.description with TursoDB information
 - [x] 1.3 Update PLUGIN.homepage to TursoDB GitHub repository
 - [x] 1.4 Update PLUGIN.version to "0.1.0" (initial release)
@@ -47,9 +47,9 @@
 - [x] 6.5 Update README.md with TursoDB-specific information
 
 ## 7. Testing
-- [x] 7.1 Test `vfox search turbodb` - should list available versions
-- [x] 7.2 Test `vfox install turbodb@latest` - should download and install
-- [x] 7.3 Test `vfox use turbodb@<version>` - should set up PATH correctly
+- [x] 7.1 Test `vfox search tursodb` - should list available versions
+- [x] 7.2 Test `vfox install tursodb@latest` - should download and install
+- [x] 7.3 Test `vfox use tursodb@<version>` - should set up PATH correctly
 - [x] 7.4 Verify `turso --version` works after installation
 - [x] 7.5 Test on Windows
 - [x] 7.6 Test on macOS (Intel and/or Apple Silicon if available)
@@ -62,6 +62,6 @@
 - [x] 8.4 Add troubleshooting section
 
 ## Validation
-- [x] Run `openspec validate configure-turbodb-plugin --strict` before marking complete
+- [x] Run `openspec validate configure-tursodb-plugin --strict` before marking complete
 - [x] Ensure all hooks work end-to-end in a test environment
 - [x] Verify turso CLI executes correctly after installation

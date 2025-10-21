@@ -6,12 +6,16 @@
 The plugin SHALL fetch available TursoDB versions from the GitHub Releases API.
 
 #### Scenario: Fetching versions from GitHub
-- **WHEN** user executes `vfox search turbodb`
+- **WHEN** user executes `vfox search tursodb`
 - **THEN** the plugin queries https://api.github.com/repos/tursodatabase/turso/releases
 - **AND** returns a list of all available versions
 
 #### Scenario: API unavailable
-- **WHEN** user executes `vfox search turbodb` and GitHub API is unreachable
+- **WHEN** user executes `vfox search tursodb`
+- **THEN** the plugin displays a list of available versions from GitHub releases
+
+### Scenario: Fallback on API Error
+- **WHEN** user executes `vfox search tursodb` and GitHub API is unreachable
 - **THEN** the plugin returns an empty array
 - **AND** vfox prompts user that no versions were found
 

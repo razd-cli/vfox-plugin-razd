@@ -30,4 +30,4 @@ The current vfox plugin is based on a generic template and needs to be configure
 - Easy installation and version management of TursoDB CLI
 - Cross-platform support (Windows, macOS, Linux)
 - Automatic version discovery from official releases
-- Simple version switching with `vfox use turbodb@version`
+- Simple version switching with `vfox use tursodb@version`

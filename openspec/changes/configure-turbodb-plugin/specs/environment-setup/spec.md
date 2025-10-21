@@ -30,7 +30,7 @@ The plugin SHALL configure PATH correctly on all supported platforms.
 The plugin SHALL ensure turso command is accessible after environment setup.
 
 #### Scenario: Verifying binary access
-- **WHEN** user executes `vfox use turbodb@{version}`
+- **WHEN** user executes `vfox use tursodb@{version}`
 - **AND** user runs `turso --version`
 - **THEN** turso CLI executes successfully
 - **AND** displays correct version information
@@ -40,9 +40,9 @@ The plugin SHALL allow multiple TursoDB versions to coexist without conflicts.
 
 #### Scenario: Switching between versions
 - **WHEN** user installs versions 0.2.1 and 0.2.2
-- **AND** user executes `vfox use turbodb@0.2.1`
+- **AND** user executes `vfox use tursodb@0.2.1`
 - **THEN** turso command points to version 0.2.1
-- **WHEN** user executes `vfox use turbodb@0.2.2`
+- **WHEN** user executes `vfox use tursodb@0.2.2`
 - **THEN** turso command points to version 0.2.2
 
 ## MODIFIED Requirements

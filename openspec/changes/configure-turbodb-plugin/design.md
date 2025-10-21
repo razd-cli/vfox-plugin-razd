@@ -9,7 +9,7 @@ This design describes the architecture and technical decisions for implementing 
 **Purpose**: Define plugin identity and configuration
 
 **Key Decisions**:
-- Plugin name: "turbodb" (lowercase, consistent with vfox conventions)
+- Plugin name: "tursodb" (lowercase, consistent with vfox conventions)
 - Target minRuntimeVersion: 0.3.0 (supports required hooks)
 - Distribution: GitHub releases (self-hosted manifest)
 
