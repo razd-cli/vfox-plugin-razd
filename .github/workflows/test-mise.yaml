@@ -31,7 +31,11 @@ jobs:
         run: mise --version
       
       - name: Install plugin from source
-        run: mise plugin install tursodb $GITHUB_WORKSPACE
+        run: |
+          mise plugin install --yes tursodb "file://$GITHUB_WORKSPACE"
+      
+      - name: Verify plugin installation
+        run: mise plugin list | grep tursodb
       
       - name: List available versions
         run: mise ls-remote tursodb
