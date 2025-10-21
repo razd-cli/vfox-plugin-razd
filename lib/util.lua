@@ -60,27 +60,28 @@ function util.parse_releases(releases)
 end
 
 --- Get platform-specific asset name for TursoDB
---- @param version string Version number (without 'v' prefix)
+--- @param version string Version number (without 'v' prefix) - not used as assets don't include version
 --- @param os_type string Operating system type
 --- @param arch_type string Architecture type
 --- @return string|nil Asset filename or nil if unsupported
 function util.get_asset_name(version, os_type, arch_type)
+    -- Note: TursoDB release assets do NOT include version in filename
     local platform_map = {
         windows = {
-            ["x86_64"] = "turso_cli-" .. version .. "-x86_64-pc-windows-msvc.zip",
-            ["amd64"] = "turso_cli-" .. version .. "-x86_64-pc-windows-msvc.zip",
+            ["x86_64"] = "turso_cli-x86_64-pc-windows-msvc.zip",
+            ["amd64"] = "turso_cli-x86_64-pc-windows-msvc.zip",
         },
         darwin = {
-            ["x86_64"] = "turso_cli-" .. version .. "-x86_64-apple-darwin.tar.gz",
-            ["amd64"] = "turso_cli-" .. version .. "-x86_64-apple-darwin.tar.gz",
-            ["arm64"] = "turso_cli-" .. version .. "-aarch64-apple-darwin.tar.gz",
-            ["aarch64"] = "turso_cli-" .. version .. "-aarch64-apple-darwin.tar.gz",
+            ["x86_64"] = "turso_cli-x86_64-apple-darwin.tar.xz",
+            ["amd64"] = "turso_cli-x86_64-apple-darwin.tar.xz",
+            ["arm64"] = "turso_cli-aarch64-apple-darwin.tar.xz",
+            ["aarch64"] = "turso_cli-aarch64-apple-darwin.tar.xz",
         },
         linux = {
-            ["x86_64"] = "turso_cli-" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
-            ["amd64"] = "turso_cli-" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
-            ["arm64"] = "turso_cli-" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
-            ["aarch64"] = "turso_cli-" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
+            ["x86_64"] = "turso_cli-x86_64-unknown-linux-gnu.tar.xz",
+            ["amd64"] = "turso_cli-x86_64-unknown-linux-gnu.tar.xz",
+            ["arm64"] = "turso_cli-aarch64-unknown-linux-gnu.tar.xz",
+            ["aarch64"] = "turso_cli-aarch64-unknown-linux-gnu.tar.xz",
         }
     }
     
