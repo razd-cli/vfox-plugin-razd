@@ -1,7 +1,8 @@
-# Version Discovery Specification
+# version-discovery Specification
 
-## ADDED Requirements
-
+## Purpose
+TBD - created by archiving change configure-turbodb-plugin. Update Purpose after archive.
+## Requirements
 ### Requirement: GitHub Releases API Integration
 The plugin SHALL fetch available TursoDB versions from the GitHub Releases API.
 
@@ -14,7 +15,7 @@ The plugin SHALL fetch available TursoDB versions from the GitHub Releases API.
 - **WHEN** user executes `vfox search tursodb`
 - **THEN** the plugin displays a list of available versions from GitHub releases
 
-### Scenario: Fallback on API Error
+#### Scenario: Fallback on API Error
 - **WHEN** user executes `vfox search tursodb` and GitHub API is unreachable
 - **THEN** the plugin returns an empty array
 - **AND** vfox prompts user that no versions were found
@@ -47,10 +48,3 @@ The plugin SHALL leverage vfox's built-in caching for version lists.
 - **THEN** the plugin relies on cached results
 - **AND** does not make additional API requests
 
-## MODIFIED Requirements
-
-None - this is a new capability.
-
-## REMOVED Requirements
-
-None - this is a new capability.
