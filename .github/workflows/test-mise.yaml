@@ -32,21 +32,21 @@ jobs:
       
       - name: Install plugin from source
         run: |
-          mise plugin install --yes tursodb "file://$GITHUB_WORKSPACE"
+          mise plugin install --yes razd "file://$GITHUB_WORKSPACE"
       
       - name: Verify plugin installation
-        run: mise plugin list | grep tursodb
+        run: mise plugin list | grep razd
       
       - name: List available versions
-        run: mise ls-remote tursodb
+        run: mise ls-remote razd
       
-      - name: Install TursoDB latest
-        run: mise install tursodb@latest
+      - name: Install razd latest
+        run: mise install razd@latest
       
-      - name: Activate TursoDB
-        run: mise use tursodb@latest
+      - name: Activate razd
+        run: mise use razd@latest
       
-      - name: Verify turso command
+      - name: Verify razd command
         run: |
           eval "$(mise activate bash)"
-          tursodb --version
+          razd --version

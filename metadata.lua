@@ -3,15 +3,15 @@ PLUGIN = {}
 
 --- !!! MUST BE SET !!!
 --- Plugin name
-PLUGIN.name = "tursodb"
+PLUGIN.name = "razd"
 --- Plugin version
 PLUGIN.version = "0.1.0"
 --- Plugin homepage
-PLUGIN.homepage = "https://github.com/tursodatabase/turso"
+PLUGIN.homepage = "https://github.com/razd-cli/razd"
 --- Plugin license, please choose a correct license according to your needs.
 PLUGIN.license = "Apache 2.0"
 --- Plugin description
-PLUGIN.description = "vfox plugin for TursoDB - An in-process SQL database, compatible with SQLite"
+PLUGIN.description = "vfox plugin for razd - A command-line interface tool"
 
 
 --- !!! OPTIONAL !!!
@@ -33,10 +33,10 @@ NOTE:
     you can set this address to the manifest file address, so that the plugin can be updated automatically.
 
  --]]
-PLUGIN.manifestUrl = "https://github.com/dealenx/vfox-plugin-tursodb/releases/download/manifest/manifest.json"
+PLUGIN.manifestUrl = "https://github.com/razd-cli/vfox-plugin-razd/releases/download/manifest/manifest.json"
 -- Some things that need user to be attention!
 PLUGIN.notes = {
-    "TursoDB is currently in BETA. Use caution with production data.",
+    "razd CLI tool for managing and working with database schemas and migrations.",
 }
 
 --- List legacy configuration filenames for determining the specified version of the tool.

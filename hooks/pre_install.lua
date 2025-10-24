@@ -18,13 +18,13 @@ function PLUGIN:PreInstall(ctx)
         return {
             version = "",
             note = "Unsupported platform: " .. os_type .. "/" .. arch_type .. 
-                   ". TursoDB supports Windows (x64), macOS (x64/arm64), and Linux (x64/arm64)."
+                   ". razd supports Windows (x64), macOS (x64/arm64), and Linux (x64/arm64)."
         }
     end
     
     return {
         version = version,
         url = url,
-        note = "Installing TursoDB CLI " .. version .. " for " .. os_type .. "/" .. arch_type
+        note = "Installing razd CLI " .. version .. " for " .. os_type .. "/" .. arch_type
     }
 end

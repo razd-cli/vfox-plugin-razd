@@ -6,8 +6,8 @@
 function PLUGIN:EnvKeys(ctx)
     local mainPath = ctx.path
     
-    -- TursoDB binary is typically extracted directly to the SDK root
-    -- The archive structure places the turso binary in the root directory
+    -- razd binary is typically extracted directly to the SDK root
+    -- The archive structure places the razd binary in the root directory
     return {
         {
             key = "PATH",

@@ -7,7 +7,7 @@ local util = {}
 --- @return table|nil releases array or nil on error
 --- @return string|nil error message if failed
 function util.fetch_github_releases()
-    local url = "https://api.github.com/repos/tursodatabase/turso/releases"
+    local url = "https://api.github.com/repos/razd-cli/razd/releases"
     local resp, err = http.get({
         url = url,
         headers = {
@@ -59,29 +59,29 @@ function util.parse_releases(releases)
     return versions
 end
 
---- Get platform-specific asset name for TursoDB
---- @param version string Version number (without 'v' prefix) - not used as assets don't include version
+--- Get platform-specific asset name for razd
+--- @param version string Version number (without 'v' prefix)
 --- @param os_type string Operating system type
 --- @param arch_type string Architecture type
 --- @return string|nil Asset filename or nil if unsupported
 function util.get_asset_name(version, os_type, arch_type)
-    -- Note: TursoDB release assets do NOT include version in filename
+    -- razd release assets include version in filename: razd-v{version}-{platform}.{ext}
     local platform_map = {
         windows = {
-            ["x86_64"] = "turso_cli-x86_64-pc-windows-msvc.zip",
-            ["amd64"] = "turso_cli-x86_64-pc-windows-msvc.zip",
+            ["x86_64"] = "razd-v" .. version .. "-x86_64-pc-windows-msvc.zip",
+            ["amd64"] = "razd-v" .. version .. "-x86_64-pc-windows-msvc.zip",
         },
         darwin = {
-            ["x86_64"] = "turso_cli-x86_64-apple-darwin.tar.xz",
-            ["amd64"] = "turso_cli-x86_64-apple-darwin.tar.xz",
-            ["arm64"] = "turso_cli-aarch64-apple-darwin.tar.xz",
-            ["aarch64"] = "turso_cli-aarch64-apple-darwin.tar.xz",
+            ["x86_64"] = "razd-v" .. version .. "-x86_64-apple-darwin.tar.gz",
+            ["amd64"] = "razd-v" .. version .. "-x86_64-apple-darwin.tar.gz",
+            ["arm64"] = "razd-v" .. version .. "-aarch64-apple-darwin.tar.gz",
+            ["aarch64"] = "razd-v" .. version .. "-aarch64-apple-darwin.tar.gz",
         },
         linux = {
-            ["x86_64"] = "turso_cli-x86_64-unknown-linux-gnu.tar.xz",
-            ["amd64"] = "turso_cli-x86_64-unknown-linux-gnu.tar.xz",
-            ["arm64"] = "turso_cli-aarch64-unknown-linux-gnu.tar.xz",
-            ["aarch64"] = "turso_cli-aarch64-unknown-linux-gnu.tar.xz",
+            ["x86_64"] = "razd-v" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
+            ["amd64"] = "razd-v" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
+            ["arm64"] = "razd-v" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
+            ["aarch64"] = "razd-v" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
         }
     }
     
@@ -103,7 +103,7 @@ function util.get_download_url(version, os_type, arch_type)
         return nil
     end
     
-    return "https://github.com/tursodatabase/turso/releases/download/v" .. version .. "/" .. asset_name
+    return "https://github.com/razd-cli/razd/releases/download/v" .. version .. "/" .. asset_name
 end
 
 return util

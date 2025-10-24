@@ -9,7 +9,7 @@ function PLUGIN:Available(ctx)
     
     if err ~= nil then
         -- Return empty array on error, vfox will handle the message
-        print("Error fetching TursoDB releases: " .. err)
+        print("Error fetching razd releases: " .. err)
         return {}
     end
     

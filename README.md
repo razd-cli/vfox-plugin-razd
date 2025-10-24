@@ -1,12 +1,10 @@
-# vfox-plugin-tursodb
+# vfox-plugin-razd
 
-[![Test mise Integration](https://github.com/dealenx/vfox-plugin-tursodb/actions/workflows/test-mise.yaml/badge.svg)](https://github.com/dealenx/vfox-plugin-tursodb/actions/workflows/test-mise.yaml)
+[![Test mise Integration](https://github.com/razd-cli/vfox-plugin-razd/actions/workflows/test-mise.yaml/badge.svg)](https://github.com/razd-cli/vfox-plugin-razd/actions/workflows/test-mise.yaml)
 
-A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tursodatabase/turso) CLI versions.
+A [vfox](https://vfox.dev/) plugin for managing [razd](https://github.com/razd-cli/razd) CLI versions.
 
-> TursoDB is an in-process SQL database written in Rust, compatible with SQLite.
-
-⚠️ **Note**: TursoDB is currently in BETA. Use caution with production data and ensure you have backups.
+> razd is a command-line interface tool for managing database schemas and migrations.
 
 ## Prerequisites
 
@@ -20,19 +18,19 @@ A [vfox](https://vfox.dev/) plugin for managing [TursoDB](https://github.com/tur
 Install the plugin:
 
 ```bash
-mise plugin install tursodb https://github.com/dealenx/vfox-plugin-tursodb
+mise plugin install razd https://github.com/razd-cli/vfox-plugin-razd
 ```
 
 Set global version:
 
 ```bash
-mise use -g tursodb
+mise use -g razd
 ```
 
 Or install and use a specific version:
 
 ```bash
-mise use -g tursodb@0.2.2
+mise use -g razd@0.1.0
 ```
 
 ### Using vfox
@@ -40,13 +38,13 @@ mise use -g tursodb@0.2.2
 Install the plugin:
 
 ```bash
-vfox add tursodb
+vfox add razd
 ```
 
 Or install from source:
 
 ```bash
-vfox add --source https://github.com/dealenx/vfox-plugin-tursodb.git tursodb
+vfox add --source https://github.com/razd-cli/vfox-plugin-razd.git razd
 ```
 
 ## Usage
@@ -55,106 +53,58 @@ vfox add --source https://github.com/dealenx/vfox-plugin-tursodb.git tursodb
 
 ```bash
 # List available versions
-mise ls-remote tursodb
+mise ls-remote razd
 
 # Install latest version
-mise install tursodb@latest
+mise install razd@latest
 
 # Install specific version
-mise install tursodb@0.2.2
+mise install razd@0.1.0
 
 # Use globally
-mise use -g tursodb@0.2.2
+mise use -g razd@0.1.0
 
 # Use in current project
-mise use tursodb@0.2.2
+mise use razd@0.1.0
 ```
 
 ### With vfox
 
 ```bash
 # Search available versions
-vfox search tursodb
+vfox search razd
 
 # Install latest version
-vfox install tursodb@latest
+vfox install razd@latest
 
 # Install specific version
-vfox install tursodb@0.2.2
+vfox install razd@0.1.0
 
 # Use in current shell session
-vfox use tursodb@0.2.2
+vfox use razd@0.1.0
 
 # Set global version
-vfox use -g tursodb@0.2.2
+vfox use -g razd@0.1.0
 
 # Set project-specific version
-vfox use -p tursodb@0.2.2
+vfox use -p razd@0.1.0
 ```
 
 ### Verify installation
 
 ```bash
-turso --version
+razd --version
 ```
 
-## Quick Start with TursoDB
+## Quick Start with razd
 
-After installing TursoDB CLI with vfox, you can start using the interactive shell:
-
-### 1. Launch the interactive shell
+After installing razd CLI with vfox, you can start using it:
 
 ```bash
-tursodb
+razd --help
 ```
 
-This will start the Turso interactive shell:
-
-```
-Turso
-Enter ".help" for usage hints.
-Connected to a transient in-memory database.
-Use ".open FILENAME" to reopen on a persistent database
-turso>
-```
-
-### 2. Execute SQL statements
-
-#### Create a table
-
-```sql
-CREATE TABLE users (id INT, username TEXT);
-```
-
-#### Insert data
-
-```sql
-INSERT INTO users VALUES (1, 'alice');
-INSERT INTO users VALUES (2, 'bob');
-```
-
-#### Query data
-
-```sql
-SELECT * FROM users;
-```
-
-This will return:
-
-```
-1|alice
-2|bob
-```
-
-### 3. Working with persistent databases
-
-To work with a persistent database file:
-
-```bash
-tursodb my_database.db
-```
-
-For more information, see the [TursoDB Documentation](https://docs.turso.tech/tursodb/quickstart).
+For more information, see the [razd Documentation](https://github.com/razd-cli/razd).
 
 ## Platform Support
 
@@ -170,7 +120,7 @@ For more information, see the [TursoDB Documentation](https://docs.turso.tech/tu
 
 ### Command not found after installation
 
-Make sure you've run `vfox use tursodb@<version>` to activate the version. Check that vfox is properly configured in your shell:
+Make sure you've run `vfox use razd@<version>` to activate the version. Check that vfox is properly configured in your shell:
 
 ```bash
 # For bash/zsh
@@ -185,11 +135,11 @@ Add-Content $PROFILE 'Invoke-Expression "$(vfox activate pwsh)"'
 
 ### Unsupported platform error
 
-This plugin currently supports Windows (x64), macOS (x64/arm64), and Linux (x64/arm64). If you're using a different platform or architecture, TursoDB may not provide pre-built binaries for your system.
+This plugin currently supports Windows (x64), macOS (x64/arm64), and Linux (x64/arm64). If you're using a different platform or architecture, razd may not provide pre-built binaries for your system.
 
 ## Development
 
-This plugin fetches version information and binaries from the [official TursoDB GitHub releases](https://github.com/tursodatabase/turso/releases).
+This plugin fetches version information and binaries from the [official razd GitHub releases](https://github.com/razd-cli/razd/releases).
 
 ## License
 
@@ -197,7 +147,7 @@ Apache 2.0
 
 ## Links
 
-- [TursoDB Official Repository](https://github.com/tursodatabase/turso)
-- [TursoDB Documentation](https://docs.turso.tech/tursodb/quickstart)
+- [razd Official Repository](https://github.com/razd-cli/razd)
+- [razd Documentation](https://github.com/razd-cli/razd)
 - [vfox Documentation](https://vfox.dev/)
 - [Plugin Development Guide](https://vfox.dev/plugins/create/howto.html)
