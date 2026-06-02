@@ -65,29 +65,32 @@ end
 --- @param arch_type string Architecture type
 --- @return string|nil Asset filename or nil if unsupported
 function util.get_asset_name(version, os_type, arch_type)
-    -- razd release assets include version in filename: razd-v{version}-{platform}.{ext}
-    local platform_map = {
-        windows = {
-            ["x86_64"] = "razd-v" .. version .. "-x86_64-pc-windows-msvc.zip",
-            ["amd64"] = "razd-v" .. version .. "-x86_64-pc-windows-msvc.zip",
-        },
-        darwin = {
-            ["x86_64"] = "razd-v" .. version .. "-x86_64-apple-darwin.tar.gz",
-            ["amd64"] = "razd-v" .. version .. "-x86_64-apple-darwin.tar.gz",
-            ["arm64"] = "razd-v" .. version .. "-aarch64-apple-darwin.tar.gz",
-            ["aarch64"] = "razd-v" .. version .. "-aarch64-apple-darwin.tar.gz",
-        },
-        linux = {
-            ["x86_64"] = "razd-v" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
-            ["amd64"] = "razd-v" .. version .. "-x86_64-unknown-linux-gnu.tar.gz",
-            ["arm64"] = "razd-v" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
-            ["aarch64"] = "razd-v" .. version .. "-aarch64-unknown-linux-gnu.tar.gz",
-        }
-    }
-    
-    if platform_map[os_type] and platform_map[os_type][arch_type] then
-        return platform_map[os_type][arch_type]
+    local ext = "tar.gz"
+    if os_type == "windows" then
+        ext = "zip"
     end
+
+    local arch = arch_type
+    if arch_type == "x86_64" then
+        arch = "amd64"
+    elseif arch_type == "aarch64" then
+        arch = "arm64"
+    end
+
+    local os_name = os_type
+    if os_type == "darwin" then
+        os_name = "darwin"
+    end
+
+    local asset = "razd_" .. os_name .. "_" .. arch .. "." .. ext
+
+    if (os_type == "linux" or os_type == "darwin" or os_type == "windows")
+        and (arch == "amd64" or arch == "arm64") then
+        return asset
+    end
+
+    return nil
+end
     
     return nil
 end

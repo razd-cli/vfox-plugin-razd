@@ -4,7 +4,7 @@
 
 A [vfox](https://vfox.dev/) plugin for managing [razd](https://github.com/razd-cli/razd) CLI versions.
 
-> razd is a command-line interface tool for managing database schemas and migrations.
+> razd is a project environment provisioning CLI that works with mise and devbox.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ mise use -g razd
 Or install and use a specific version:
 
 ```bash
-mise use -g razd@0.1.0
+mise use -g razd@1.2.4
 ```
 
 ### Using vfox
@@ -59,13 +59,13 @@ mise ls-remote razd
 mise install razd@latest
 
 # Install specific version
-mise install razd@0.1.0
+mise install razd@1.2.4
 
 # Use globally
-mise use -g razd@0.1.0
+mise use -g razd@1.2.4
 
 # Use in current project
-mise use razd@0.1.0
+mise use razd@1.2.4
 ```
 
 ### With vfox
@@ -78,16 +78,16 @@ vfox search razd
 vfox install razd@latest
 
 # Install specific version
-vfox install razd@0.1.0
+vfox install razd@1.2.4
 
 # Use in current shell session
-vfox use razd@0.1.0
+vfox use razd@1.2.4
 
 # Set global version
-vfox use -g razd@0.1.0
+vfox use -g razd@1.2.4
 
 # Set project-specific version
-vfox use -p razd@0.1.0
+vfox use -p razd@1.2.4
 ```
 
 ### Verify installation
@@ -96,25 +96,15 @@ vfox use -p razd@0.1.0
 razd --version
 ```
 
-## Quick Start with razd
-
-After installing razd CLI with vfox, you can start using it:
-
-```bash
-razd --help
-```
-
-For more information, see the [razd Documentation](https://github.com/razd-cli/razd).
-
 ## Platform Support
 
 | Platform | Architecture | Supported |
 |----------|-------------|-----------|
-| Windows  | x64         | ✅        |
-| macOS    | Intel (x64) | ✅        |
-| macOS    | Apple Silicon (arm64) | ✅ |
-| Linux    | x64         | ✅        |
-| Linux    | arm64       | ✅        |
+| Windows  | x64         | Yes       |
+| macOS    | Intel (x64) | Yes       |
+| macOS    | Apple Silicon (arm64) | Yes |
+| Linux    | x64         | Yes       |
+| Linux    | arm64       | Yes       |
 
 ## Troubleshooting
 
@@ -148,6 +138,5 @@ Apache 2.0
 ## Links
 
 - [razd Official Repository](https://github.com/razd-cli/razd)
-- [razd Documentation](https://github.com/razd-cli/razd)
 - [vfox Documentation](https://vfox.dev/)
 - [Plugin Development Guide](https://vfox.dev/plugins/create/howto.html)

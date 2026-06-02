@@ -5,13 +5,13 @@ PLUGIN = {}
 --- Plugin name
 PLUGIN.name = "razd"
 --- Plugin version
-PLUGIN.version = "0.1.0"
+PLUGIN.version = "0.2.0"
 --- Plugin homepage
 PLUGIN.homepage = "https://github.com/razd-cli/razd"
 --- Plugin license, please choose a correct license according to your needs.
 PLUGIN.license = "Apache 2.0"
 --- Plugin description
-PLUGIN.description = "vfox plugin for razd - A command-line interface tool"
+PLUGIN.description = "vfox plugin for razd - project environment provisioning CLI"
 
 
 --- !!! OPTIONAL !!!
@@ -36,7 +36,7 @@ NOTE:
 PLUGIN.manifestUrl = "https://github.com/razd-cli/vfox-plugin-razd/releases/download/manifest/manifest.json"
 -- Some things that need user to be attention!
 PLUGIN.notes = {
-    "razd CLI tool for managing and working with database schemas and migrations.",
+    "razd CLI tool for project environment provisioning with mise and devbox.",
 }
 
 --- List legacy configuration filenames for determining the specified version of the tool.
