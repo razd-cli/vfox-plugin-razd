@@ -11,12 +11,17 @@ function util.fetch_github_releases()
     local resp, err = http.get({
         url = url,
         headers = {
-            ["Accept"] = "application/vnd.github.v3+json"
+            ["Accept"] = "application/vnd.github.v3+json",
+            ["User-Agent"] = "vfox-plugin-razd"
         }
     })
     
-    if err ~= nil or resp.status_code ~= 200 then
-        return nil, "Failed to fetch releases from GitHub: " .. (err or "HTTP " .. resp.status_code)
+    if err ~= nil then
+        return nil, "Failed to fetch releases from GitHub: " .. err
+    end
+    
+    if resp.status_code ~= 200 then
+        return nil, "Failed to fetch releases from GitHub: HTTP " .. resp.status_code
     end
     
     local releases, decode_err = json.decode(resp.body)
