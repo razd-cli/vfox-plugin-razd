@@ -9,6 +9,18 @@ function PLUGIN:PreInstall(ctx)
     local version = ctx.version
     local os_type = RUNTIME.osType
     local arch_type = RUNTIME.archType
+
+    -- Resolve "latest" to an actual version number
+    if version == "latest" then
+        local latest, err = util.get_latest_version()
+        if err ~= nil then
+            return {
+                version = "",
+                note = "Failed to resolve latest version: " .. err
+            }
+        end
+        version = latest
+    end
     
     -- Get download URL for the platform
     local url = util.get_download_url(version, os_type, arch_type)

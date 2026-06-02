@@ -111,4 +111,38 @@ function util.get_download_url(version, os_type, arch_type)
     return "https://github.com/razd-cli/razd/releases/download/v" .. version .. "/" .. asset_name
 end
 
+--- Get the latest release version from GitHub
+--- @return string Latest version (without 'v' prefix)
+--- @return string|nil Error message if failed
+function util.get_latest_version()
+    local url = "https://api.github.com/repos/razd-cli/razd/releases/latest"
+    local resp, err = http.get({
+        url = url,
+        headers = {
+            ["Accept"] = "application/vnd.github.v3+json",
+            ["User-Agent"] = "vfox-plugin-razd"
+        }
+    })
+    
+    if err ~= nil then
+        return nil, "Failed to fetch latest release: " .. err
+    end
+    
+    if resp.status_code ~= 200 then
+        return nil, "Failed to fetch latest release: HTTP " .. resp.status_code
+    end
+    
+    local release, decode_err = json.decode(resp.body)
+    if decode_err ~= nil then
+        return nil, "Failed to parse latest release: " .. decode_err
+    end
+    
+    local version = release.tag_name
+    if version:sub(1, 1) == "v" then
+        version = version:sub(2)
+    end
+    
+    return version, nil
+end
+
 return util
