@@ -91,9 +91,6 @@ function util.get_asset_name(version, os_type, arch_type)
 
     return nil
 end
-    
-    return nil
-end
 
 --- Get download URL for specific version and platform
 --- @param version string Version number (without 'v' prefix)
